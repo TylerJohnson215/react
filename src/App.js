@@ -7,12 +7,20 @@ import AddEmployee from './Components/AddEmployee';
 import EditEmployee from './Components/EditEmployee';
 import Header from './Components/Header';
 import Employees from './Pages/Employees'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Team from './Pages/Team';
 
 function App() {
   return (
-  <Header>
-    <Employees />
-  </Header>
+  <BrowserRouter>
+    <Header>
+      <Routes>
+        <Route path='/employees' element={<Employees/>}/>
+
+        <Route path='/team' element={<Team/>}/>
+      </Routes>
+    </Header>
+  </BrowserRouter>
   )
 };
 
